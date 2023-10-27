@@ -11,8 +11,12 @@ default_pin = '1050957263028824748' # Pin: Pega correta na amamentação - como 
 
 remove_char = '_'
 
+
 def get_or_default(item, default_value):
-    return default_value if (math.isnan(item)) else item
+    if (isinstance(item, str)):
+        return default_value if (len(item) == 0 or item == 'nan') else item
+    else:
+        return default_value if (math.isnan(item)) else item
 
 print('####################')
 start = datetime.now()

@@ -56,6 +56,6 @@ def get_original_pins():
 
 def add_new_pin(original_pin, pin_id):
     print(f'Adding new pin for Request ID [{original_pin}]: [{pin_id}]')
-    with open(original_pins_file, 'w', encoding='utf-8') as file:
+    with open(original_pins_file, 'a', encoding='utf-8') as file:
         file.write(f'{original_pin}{kv_separator}{pin_id}\n')
 

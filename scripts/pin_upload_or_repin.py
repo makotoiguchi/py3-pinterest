@@ -67,18 +67,18 @@ for item in todo_list:
     description = get_or_default(item[excel.pin_col_description], default_desc)
     link = get_or_default(item[excel.pin_col_link], default_link)
     title = get_or_default(item[excel.pin_col_title], default_title)
-    original_pin = title
     alt_text = get_or_default(item[excel.pin_col_alt_text], default_alt_text)
+    original_pin = f'{title}-{image_file}'
 
     print(f'Using:')
     print(f'   - id: {id};')
-    print(f'   - original_pin: {original_pin};')
     print(f'   - board_id: {board_id};')
     print(f'   - image_file: {image_file};')
     print(f'   - description: {description};')
     print(f'   - link: {link}')
     print(f'   - title: {title}')
     print(f'   - alt_text: {alt_text}')
+    print(f'   - original_pin: {original_pin};')
 
     if (str(id) in processed):
         print(f'Item [{id}] previously processed.')
