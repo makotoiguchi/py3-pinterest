@@ -1,4 +1,7 @@
-# SOS Mamãe
+# Pinterest Automation
+
+*task.bat* gather all scripts and the needed steps to automate the creation of New Pins and Repins.
+This task may be configured in Windows Task Scheduler to be automatically triggered.
 
 ## Source files
 
