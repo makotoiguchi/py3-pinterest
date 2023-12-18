@@ -9,7 +9,7 @@ import commons.persistence_utils as db
 default_board = '1050957331733068645' # Board: Bebês
 default_pin = '1050957263028824748' # Pin: Pega correta na amamentação - como fazer
 
-remove_char = '_'
+remove_char = '_' # we need to store the numeric id as a forced string, otherwise Excel rounds it
 
 
 def get_or_default(item, default_value):
@@ -40,7 +40,7 @@ for item in todo_list:
     print(f'Processing line: {item}')
     id = int(item[excel.col_id])
     board_id = get_or_default(str(item[excel.repin_col_board_id]).removeprefix(remove_char), default_board)
-    pin_id = get_or_default(item[excel.repin_col_pin_id], default_pin)
+    pin_id = get_or_default(str(item[excel.repin_col_pin_id]).removeprefix(remove_char), default_pin)
 
     print(f'Using:')
     print(f'   - id: {id};')
