@@ -30,6 +30,7 @@ def build_image_path(folder, filename):
         (not isinstance(filename, str) and math.isnan(filename))):
         return default_image
     
+    # we may use a completely different root source folder by adjusting the following path
     image_file = 'data/POSTS/' + folder + '/Pinterest/' + filename
     if (os.path.isfile(image_file)):
         return image_file
