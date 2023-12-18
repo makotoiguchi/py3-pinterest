@@ -39,7 +39,7 @@ def build_image_path(folder, filename):
 
 print('####################')
 start = datetime.now()
-print(f'Repin - {start}')
+print(f'Pin - {start}')
 print('####################')
 
 pinterest = Pinterest(
